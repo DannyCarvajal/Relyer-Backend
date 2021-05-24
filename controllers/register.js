@@ -7,6 +7,8 @@ const fastRegisterPost = (req = request, res = response) => {
 }
 
 const completeRegisterPost = (req = request, res = response) => {
+   
+   
    res.json({
       msg: 'API completeRegisterPost'
    })

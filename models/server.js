@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
+const { dbConnection } = require('../database/config')
 
 class Server {
 
@@ -20,6 +21,7 @@ class Server {
       this.registerPath = '/api/register';
 
       //Conectar con BD
+      this.connectDB();
 
       //Middlewares
       this.middlewares();
@@ -27,6 +29,10 @@ class Server {
       //Rutas
       this.routes();
 
+   }
+
+   async connectDB(){
+      await dbConnection();
    }
 
    middlewares(){
