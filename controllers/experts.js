@@ -11,7 +11,7 @@ const expertsGetById = (req = request, res= response) => {
    
    const {id} = req.params;
 
-   res.json({
+   res.status(200).json({
       msg: 'Si funciona API - Get by Id Experts',
       id
    })
