@@ -30,8 +30,13 @@ const usuariosGetyId = async (req = request, res = response) => {
    const { id } = req.params;
    
    const usuario = await Usuario.findById(id);
-
-   res.json({
+   const estado = usuario.estado;
+   if(!estado){
+      return res.status(401).json({
+         msg: 'User is not enabled'
+      })
+   }
+   res.status(200).json({
       id,
       usuario
    });
