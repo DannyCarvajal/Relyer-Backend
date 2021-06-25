@@ -40,6 +40,7 @@ const UsuarioSchema = Schema({
 //Para sacar __v y password de lo que muestro
 UsuarioSchema.methods.toJSON = function(){
    const { __v, password, _id, ...usuario } = this.toObject();
+   usuario.uid = _id;
    return usuario;
 }
 
