@@ -45,10 +45,3 @@ ExpertoSchema.methods.toJSON = function(){
 }
 
 module.exports = model('Experto', ExpertoSchema); //Mongoose le agrega la s por defecto
-
-
-//Experts
-// name
-// experience
-// contactCTA
-// photo 

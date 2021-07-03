@@ -51,13 +51,7 @@ const expertsPost = async (req = request, res= response) => {
    await experto.save();
 
    res.status(201).json({
-      msg: 'Si funciona API - Post  Experts',
-      nombre, 
-      category,
-      correo,
-      phoneNumber,
-      company,
-      experience
+      experto
    })
 }
 
@@ -69,7 +63,6 @@ const expertsPut = async (req = request, res = response) => {
    const experto = await Experto.findByIdAndUpdate(id, resto);
 
    res.json({
-      msg: 'Si funciona API - Put Experts',
       experto
    })
 }
