@@ -1,15 +1,23 @@
 {
-  "name": "backend",
+  "name": "Relyer-Backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "/api/users",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon src/"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsweetheart/Relyer-Backend.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsweetheart/Relyer-Backend/issues"
+  },
+  "homepage": "https://github.com/tsweetheart/Relyer-Backend#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.7"
+    "express": "^4.17.1"
   }
 }
