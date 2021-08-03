@@ -24,14 +24,14 @@ const contactGet = async ( req = request, res = response) => {
 
 const contactPost = async (req = request, res = response) => {
    
-   const { nombre, correo, phoneNumber, comentary} = req.body;
-   const contacto = new Contacto({ nombre, correo, phoneNumber, comentary});
+   const { nombre, correo, telefono, comentario} = req.body;
+   const contacto = new Contacto({ nombre, correo, telefono, comentario});
 
 
    //Guardar en BD
    await contacto.save();
 
-   res.json({
+   res.status(201).json({
       contacto
    });
 }

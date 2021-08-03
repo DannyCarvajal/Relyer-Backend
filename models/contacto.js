@@ -8,14 +8,20 @@ const ContactoSchema = Schema({
    },
    correo: {
       type: String,
-      required: [true, 'El correo es obligatorio'],
-      unique: true
+      unique: false,
+      required: [true, 'El correo es obligatorio']
    },
-   phoneNumber: {
+   telefono: {
       type: String,
+      required: [true, 'El telefono es obligatorio']
    },
-   comentary: {
+   comentario: {
       type: String,
+      required: [true, 'El comentario es obligatorio']
+   },
+   date: {
+      type: Date, 
+      default: Date.now()
    },
    estado: {
       type: Boolean,
