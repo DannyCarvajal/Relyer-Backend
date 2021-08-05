@@ -13,6 +13,9 @@ class Server {
       this.expertosPath = '/api/expertos';
       this.toolsPath = '/api/tools';
       this.contactPath = '/api/contact';
+      this.answersPath = '/api/answers';
+      this.questionsPath = '/api/questions';
+      this.resultsPath = '/api/results';
 
       // Conectar a base de datos
       this.conectarDB();
@@ -51,6 +54,12 @@ class Server {
       this.app.use(this.toolsPath, require('../routes/tools'));
       
       this.app.use(this.contactPath, require('../routes/contact'));
+
+      this.app.use(this.answersPath, require('../routes/answers'));
+
+      this.app.use(this.questionsPath, require('../routes/questions.routes'));
+
+      this.app.use(this.resultsPath, require('../routes/results'));
 
    }
 
