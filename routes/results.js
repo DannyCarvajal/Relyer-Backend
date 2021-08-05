@@ -10,4 +10,6 @@ routes.post('/', resultsController.addResults)
 
 routes.delete('/id/', resultsController.deleteResultsById)
 
+routes.put('/id/', resultsController.updateResultsById)
+
 module.exports = routes;

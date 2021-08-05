@@ -58,7 +58,20 @@ const deleteResultsById = async (req, res) => {
     res.status(200).json({msg : "Resultado eliminado", data : results});
 }
 
+const updateResultsById = async (req, res) => {
+    const {id} = req.query
+    const {questionsId, answers, score,  usuarioId} = req.body
+    if(!id || !questionsId || !answer || !score || !usuarioId){
+        res.status(401).json({msg: 'Datos invalidos'})
+    }
+    const todo = {id, questionsId, answers, score, usuarioId}
+    const results = await Results.findByIdAndUpdate( id, todo );
+
+    res.status(200).json(results)
+}
+
 exports.getResults = getResults;
 exports.getResultsById = getResultsById;
 exports.addResults = addResults;
 exports.deleteResultsById = deleteResultsById;
+exports.updateResultsById = updateResultsById;
