@@ -8,4 +8,6 @@ routes.get('/id/', resultsController.getResultsById)
 
 routes.post('/', resultsController.addResults)
 
+routes.delete('/id/', resultsController.deleteResultsById)
+
 module.exports = routes;

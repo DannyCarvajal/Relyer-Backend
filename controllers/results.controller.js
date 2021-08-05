@@ -1,7 +1,6 @@
 const { request, response} = require('express');
 const Results = require('../models/results.js');
 const Answers = require('../models/answers.js');
-const results = require('../models/results.js');
 
 
 const getResults = async (req, res) => {
@@ -47,7 +46,19 @@ const addResults = async (req, res) => {
 
     res.status(200).json({msg : "Datos añadidos", data : results});
 }
+const deleteResultsById = async (req, res) => {
+    const {id} = req.query
+    
+    if(!id){
+        res.status(401).json({msg: 'id no valida'})
+    }
+
+    const results = await Results.findByIdAndDelete( id );
+
+    res.status(200).json({msg : "Resultado eliminado", data : results});
+}
 
 exports.getResults = getResults;
 exports.getResultsById = getResultsById;
 exports.addResults = addResults;
+exports.deleteResultsById = deleteResultsById;
