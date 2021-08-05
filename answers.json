@@ -2,37 +2,55 @@
     {
         "id": 0,
         "answer": "respuesta1",
-        "value": 0,
+        "value": 3,
         "fk": 0
       },
       {
         "id": 1,
         "answer": "respuesta2",
-        "value": 0,
+        "value": 1,
         "fk": 0
       },
       {
         "id": 2,
         "answer": "respuesta3",
-        "value": 0,
+        "value": 2,
         "fk": 0
       },
       {
         "id": 3,
         "answer": "respuesta1",
-        "value": 0,
+        "value": 2,
         "fk": 1
       },
       {
         "id": 4,
         "answer": "respuesta2",
-        "value": 0,
+        "value": 3,
         "fk": 1
       },
       {
         "id": 5,
         "answer": "respuesta3",
-        "value": 0,
+        "value": 1,
         "fk": 1
+      },
+      {
+        "id": 6,
+        "answer": "respuesta1",
+        "value": 1,
+        "fk": 2
+      },
+      {
+        "id": 7,
+        "answer": "respuesta2",
+        "value": 3,
+        "fk": 2
+      },
+      {
+        "id": 8,
+        "answer": "respuesta3",
+        "value": 2,
+        "fk": 2
       }
 ]
