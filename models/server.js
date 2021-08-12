@@ -16,6 +16,7 @@ class Server {
       this.answersPath = '/api/answers';
       this.questionsPath = '/api/questions';
       this.resultsPath = '/api/results';
+      this.panelAdminPath = '/api/admin'
 
       // Conectar a base de datos
       this.conectarDB();
@@ -60,6 +61,8 @@ class Server {
       this.app.use(this.questionsPath, require('../routes/questions.routes'));
 
       this.app.use(this.resultsPath, require('../routes/results'));
+
+      this.app.use(this.panelAdminPath, require('../routes/panelAdmin'));
 
    }
 

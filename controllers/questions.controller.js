@@ -2,6 +2,7 @@ const { request, response} = require('express');
 
 const Question = require('../models/questions.js');
 
+
 const getQuestions = async (req, res) => {
 
     const [questions] = await Promise.all([
@@ -40,11 +41,11 @@ const deleteQuestions = async (req, res) => {
 
 const updateQuestions = async (req, res) => {
     const {id} = req.query
-    const {question} = req.body
-    if(!question || !id){
+    const {question, type} = req.body
+    if(!question || !id || !type){
         res.status(401).json({msg: 'Datos invalidos'})
     }
-    const todo = {id, question}
+    const todo = {id, question, type}
     const questions = await Question.findByIdAndUpdate( id, todo );
 
     res.status(200).json(questions)

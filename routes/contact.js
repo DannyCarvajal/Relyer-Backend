@@ -10,7 +10,9 @@ const {
 
 const {
    contactGet,
-   contactPost
+   contactPost,
+   contactUpdate,
+   contactDelete
 } = require('../controllers/contact')
 
 const router = Router();
@@ -29,6 +31,9 @@ router.post('/', [
    validarCampos
 ], contactPost);
 
+router.put('/', validarJWT, contactUpdate);
+
+router.delete('/', validarJWT, contactDelete);
 
 
 module.exports = router;
