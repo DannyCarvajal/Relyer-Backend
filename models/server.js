@@ -15,6 +15,8 @@ class Server {
       this.contactPath = '/api/contact';
       this.answersPath = '/api/answers';
       this.questionsPath = '/api/questions';
+      this.answersEnPath = '/api/answersen';
+      this.questionsEnPath = '/api/questionsen';
       this.resultsPath = '/api/results';
       this.panelAdminPath = '/api/admin'
 
@@ -59,6 +61,10 @@ class Server {
       this.app.use(this.answersPath, require('../routes/answers'));
 
       this.app.use(this.questionsPath, require('../routes/questions.routes'));
+
+      this.app.use(this.answersEnPath, require('../routes/answersEn'));
+
+      this.app.use(this.questionsEnPath, require('../routes/questions.routesEn'));
 
       this.app.use(this.resultsPath, require('../routes/results'));
 
