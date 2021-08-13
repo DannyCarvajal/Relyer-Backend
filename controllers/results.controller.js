@@ -1,6 +1,7 @@
 const { request, response} = require('express');
 const Results = require('../models/results.js');
 const Answers = require('../models/answers.js');
+const AnswersEn = require('../models/answersEn.js')
 
 
 const getResults = async (req, res) => {
@@ -46,6 +47,36 @@ const addResults = async (req, res) => {
 
     res.status(200).json({msg : "Datos añadidos", data : results});
 }
+
+const addResultsEn = async (req, res) => {
+    const {questionsId, answers, score,  usuarioId} = req.body
+    let totalScore = 0;
+
+    if(!questionsId || !answers ||!score || !usuarioId){
+        res.status(401).json({msg: 'Pregunta no valida'})
+    }
+
+    
+    let arrayTemp = Object.values(score);
+    let stringAnswers = arrayTemp.toString();
+    let arrayAnswers = stringAnswers.split(',');
+
+    for(let value of arrayAnswers){
+        const score2 =  await AnswersEn.findById(value);
+        if(score2.value != 'N/A'){
+            totalScore += parseInt (score2.value)
+        }
+    }
+    let scoreString = totalScore.toString()
+    console.log(scoreString);
+    const results = new Results({questionsId, answers, totalScore, usuarioId})
+
+    //bd
+    await results.save();
+
+    res.status(200).json({msg : "Datos añadidos", data : results});
+}
+
 const deleteResultsById = async (req, res) => {
     const {id} = req.query
     
@@ -73,5 +104,6 @@ const updateResultsById = async (req, res) => {
 exports.getResults = getResults;
 exports.getResultsById = getResultsById;
 exports.addResults = addResults;
+exports.addResultsEn = addResultsEn;
 exports.deleteResultsById = deleteResultsById;
 exports.updateResultsById = updateResultsById;

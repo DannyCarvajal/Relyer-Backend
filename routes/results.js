@@ -8,6 +8,8 @@ routes.get('/id/', resultsController.getResultsById)
 
 routes.post('/', resultsController.addResults)
 
+routes.post('/en/', resultsController.addResultsEn)
+
 routes.delete('/id/', resultsController.deleteResultsById)
 
 routes.put('/id/', resultsController.updateResultsById)
