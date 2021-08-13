@@ -54,15 +54,15 @@ GET /api/questionsen
 ```
 {
     "data":[{
-        "question": "¿Pregunta 1?",
+        "question": "Question 1?",
         "type": "0"
     },
     {
-        "question": "¿Pregunta 2?",
+        "question": "Question 2?",
         "type": "1"
     },
     {
-        "question": "¿Pregunta 2?",
+        "question": "Question 2?",
         "type": "2"
     }]
 
@@ -73,7 +73,7 @@ POST /api/questionsen
 
 ```
 {
-    "question": "¿Pregunta 1?",
+    "question": "Question 1?",
     "type": "0"
 }
 
@@ -85,7 +85,7 @@ DELETE /api/questionsen/?id=
 PUT /api/questionsen/?id=
 ```
 {
-    "question": "¿Pregunta 1?",
+    "question": "Question 1?",
     "type": "0"
 }
 
@@ -99,7 +99,7 @@ GET /api/answers
 ```
 {
     "data":[{
-        "answer": "¿Pregunta 1?",
+        "answer": "Respuesta 1",
         "value": "15",
         "questionId": "58966542bhgyj58"
     }]
@@ -111,7 +111,7 @@ GET /api/answers/?id=
 ```
 {
     "data":[{
-        "answer": "¿Pregunta 1?",
+        "answer": "Respuesta 1",
         "value": "15",
         "questionId": "58966542bhgyj58"
     }]
@@ -124,8 +124,8 @@ POST /api/answers
 
 ```
 {
-    "answer": "¿Pregunta 1?",
-    "value": "0",
+    "answer": "Respuesta 1",
+    "value": "15",
     "questionId": "58966542bhgyj58"
 }
 
@@ -136,8 +136,8 @@ DELETE /api/answers/?id=
 PUT /api/answers/?id=
 ```
 {
-    "answer": "¿Pregunta 1?",
-    "value": "0",
+    "answer": "Respuesta 2",
+    "value": "15",
     "questionId": "58966542bhgyj58"
 }
 
@@ -151,7 +151,7 @@ GET /api/answersen
 ```
 {
     "data":[{
-        "answer": "¿Pregunta 1?",
+        "answer": "Answer 1",
         "value": "15",
         "questionId": "58966542bhgyj58"
     }]
@@ -163,7 +163,7 @@ GET /api/answersen/?id=
 ```
 {
     "data":[{
-        "answer": "¿Pregunta 1?",
+        "answer": "Answer 1",
         "value": "15",
         "questionId": "58966542bhgyj58"
     }]
@@ -176,8 +176,8 @@ POST /api/answersen
 
 ```
 {
-    "answer": "¿Pregunta 1?",
-    "value": "0",
+    "answer": "Answer 1",
+    "value": "15",
     "questionId": "58966542bhgyj58"
 }
 
@@ -188,8 +188,8 @@ DELETE /api/answersen/?id=
 PUT /api/answersen/?id=
 ```
 {
-    "answer": "¿Pregunta 1?",
-    "value": "0",
+    "answer": "Answer 1",
+    "value": "15",
     "questionId": "58966542bhgyj58"
 }
 
@@ -274,7 +274,7 @@ GET /api/admin/usuarios/
     "data":[{
         "nombre": "Daniel",
         "correo": "correo@mail.com",
-        "password": "*************"
+        "password": "*************",
         "location": "Bogota",
         "position": "ENTREPRENEUR",
         "Rol": "USER_ROLE",
@@ -305,9 +305,9 @@ GET /api/admin/expertos/
 {
     "data":[{
         "nombre": "Daniel",
-        "category": "TI"
+        "category": "TI",
         "correo": "correo@mail.com",
-        "phoneNumber": "56587452"
+        "phoneNumber": "56587452",
         "company": "Protalento",
         "experience": "10 años",
         "estado": false
@@ -321,9 +321,9 @@ PUT /api/admin/expertos/?id=
 {
     "estado": false,
     "nombre": "Daniel",
-    "category": "TI"
+    "category": "TI",
     "correo": "correo@mail.com",
-    "phoneNumber": "56587452"
+    "phoneNumber": "56587452",
     "company": "Protalento",
     "experience": "10 años"
     
